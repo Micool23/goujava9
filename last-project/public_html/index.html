@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicle Insurance System</title>
+  <style>
+    /* CSS styles for the GUI */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vehicle Insurance System</h1>
+
+  <label for="vehicleType">Vehicle Type:</label>
+  <select id="vehicleType">
+    <option value="car">Car</option>
+    <option value="motorcycle">Motorcycle</option>
+  </select>
+
+  <label for="vehicleMake">Vehicle Make:</label>
+  <input type="text" id="vehicleMake">
+
+  <label for="vehicleModel">Vehicle Model:</label>
+  <input type="text" id="vehicleModel">
+
+  <label for="vehicleYear">Vehicle Year:</label>
+  <input type="text" id="vehicleYear">
+
+  <button onclick="calculateInsurance()">Calculate Insurance</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateInsurance() {
+      var vehicleType = document.getElementById("vehicleType").value;
+      var vehicleMake = document.getElementById("vehicleMake").value;
+      var vehicleModel = document.getElementById("vehicleModel").value;
+      var vehicleYear = document.getElementById("vehicleYear").value;
+
+      // Perform insurance calculation based on the inputs
+      // This is just a dummy calculation for demonstration purposes
+      var insuranceAmount = 100 + (vehicleYear - 2000) * 50;
+
+      var result = document.getElementById("result");
+      result.innerHTML = `
+        <h2>Insurance Calculation Result:</h2>
+        <p>Vehicle Type: ${vehicleType}</p>
+        <p>Vehicle Make: ${vehicleMake}</p>
+        <p>Vehicle Model: ${vehicleModel}</p>
+        <p>Vehicle Year: ${vehicleYear}</p>
+        <p>Insurance Amount: $${insuranceAmount}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
+
